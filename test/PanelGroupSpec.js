@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import PanelGroup from '../lib/PanelGroup';
-import Panel from '../lib/Panel';
+import PanelGroup from '../src/PanelGroup';
+import Panel from '../src/Panel';
 
 describe('PanelGroup', function () {
   it('Should pass bsStyle to Panels', function () {

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Jumbotron from '../lib/Jumbotron';
+import Jumbotron from '../src/Jumbotron';
 
 describe('Jumbotron', function () {
   it('Should output a div with content', function () {

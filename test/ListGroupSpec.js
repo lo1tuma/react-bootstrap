@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import ListGroup from '../lib/ListGroup';
-import ListGroupItem from '../lib/ListGroupItem';
+import ListGroup from '../src/ListGroup';
+import ListGroupItem from '../src/ListGroupItem';
 
 describe('ListGroup', function () {
 

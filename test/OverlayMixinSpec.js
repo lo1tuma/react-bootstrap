@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import OverlayMixin from '../lib/OverlayMixin';
+import OverlayMixin from '../src/OverlayMixin';
 
 describe('OverlayMixin', function () {
   let instance;

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Badge from '../lib/Badge';
+import Badge from '../src/Badge';
 
 describe('Badge', function () {
   it('Should output a badge with content', function () {

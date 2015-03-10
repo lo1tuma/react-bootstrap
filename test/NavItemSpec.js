@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import NavItem from '../lib/NavItem';
+import NavItem from '../src/NavItem';
 
 describe('NavItem', function () {
   it('Should add active class', function () {

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import ButtonToolbar from '../lib/ButtonToolbar';
-import ButtonGroup from '../lib/ButtonGroup';
-import Button from '../lib/Button';
+import ButtonToolbar from '../src/ButtonToolbar';
+import ButtonGroup from '../src/ButtonGroup';
+import Button from '../src/Button';
 
 describe('ButtonToolbar', function () {
   it('Should output a button toolbar', function () {

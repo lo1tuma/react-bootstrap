@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Glyphicon from '../lib/Glyphicon';
+import Glyphicon from '../src/Glyphicon';
 
 describe('Glyphicon', function () {
   it('Should have correct class', function () {

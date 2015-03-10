@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import DropdownMenu from '../lib/DropdownMenu';
-import MenuItem from '../lib/MenuItem';
+import DropdownMenu from '../src/DropdownMenu';
+import MenuItem from '../src/MenuItem';
 
 describe('DropdownMenu', function () {
   it('Should render menu correctly', function () {

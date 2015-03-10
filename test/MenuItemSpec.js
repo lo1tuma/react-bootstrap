@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import MenuItem from '../lib/MenuItem';
+import MenuItem from '../src/MenuItem';
 
 describe('MenuItem', function () {
   it('should output an li', function () {

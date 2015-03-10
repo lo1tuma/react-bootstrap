@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Button from '../lib/Button';
+import Button from '../src/Button';
 
 describe('Button', function () {
   it('Should output a button', function () {

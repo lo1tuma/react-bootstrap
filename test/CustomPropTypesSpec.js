@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import CustomPropTypes from '../lib/utils/CustomPropTypes';
+import CustomPropTypes from '../src/utils/CustomPropTypes';
 
 describe('CustomPropTypes', function () {
 

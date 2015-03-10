@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Col from '../lib/Col';
+import Col from '../src/Col';
 
 describe('Col', function () {
   it('Should set Offset of zero', function () {

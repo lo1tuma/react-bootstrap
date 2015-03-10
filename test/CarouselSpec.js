@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Carousel from '../lib/Carousel';
-import CarouselItem from '../lib/CarouselItem';
+import Carousel from '../src/Carousel';
+import CarouselItem from '../src/CarouselItem';
 
 describe('Carousel', function () {
   it('Should show the correct item', function () {

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Well from '../lib/Well';
+import Well from '../src/Well';
 
 describe('Well', function () {
   it('Should output a well with content', function () {

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import PageItem from '../lib/PageItem';
+import PageItem from '../src/PageItem';
 
 describe('PageItem', function () {
   it('Should output a "list item" as root element, and an "anchor" as a child item', function () {

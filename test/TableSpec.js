@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Table from '../lib/Table';
+import Table from '../src/Table';
 
 describe('Table', function () {
   it('Should be a table', function () {

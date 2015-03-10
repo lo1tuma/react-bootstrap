@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import ProgressBar from '../lib/ProgressBar';
+import ProgressBar from '../src/ProgressBar';
 
 const getProgressBar = function (wrapper) {
   return ReactTestUtils.findRenderedDOMComponentWithClass(wrapper, 'progress-bar');

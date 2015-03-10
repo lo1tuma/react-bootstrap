@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import PageHeader from '../lib/PageHeader';
+import PageHeader from '../src/PageHeader';
 
 describe('PageHeader', function () {
   it('Should output a div with content', function () {

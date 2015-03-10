@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import TabbedArea from '../lib/TabbedArea';
-import TabPane from '../lib/TabPane';
-import ValidComponentChildren from '../lib/utils/ValidComponentChildren';
+import TabbedArea from '../src/TabbedArea';
+import TabPane from '../src/TabPane';
+import ValidComponentChildren from '../src/utils/ValidComponentChildren';
 
 describe('TabbedArea', function () {
   it('Should show the correct tab', function () {

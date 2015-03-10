@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Input from '../lib/Input';
-import Button from '../lib/Button';
-import DropdownButton from '../lib/DropdownButton';
-import MenuItem from '../lib/MenuItem';
+import Input from '../src/Input';
+import Button from '../src/Button';
+import DropdownButton from '../src/DropdownButton';
+import MenuItem from '../src/MenuItem';
 
 describe('Input', function () {
   beforeEach(function() {

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import SplitButton from '../lib/SplitButton';
-import MenuItem from '../lib/MenuItem';
-import Button from '../lib/Button';
+import SplitButton from '../src/SplitButton';
+import MenuItem from '../src/MenuItem';
+import Button from '../src/Button';
 
 describe('SplitButton', function () {
   let instance;

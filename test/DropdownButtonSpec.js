@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import DropdownButton from '../lib/DropdownButton';
-import MenuItem from '../lib/MenuItem';
-import DropdownMenu from '../lib/DropdownMenu';
-import Button from '../lib/Button';
+import DropdownButton from '../src/DropdownButton';
+import MenuItem from '../src/MenuItem';
+import DropdownMenu from '../src/DropdownMenu';
+import Button from '../src/Button';
 
 describe('DropdownButton', function () {
   let instance;

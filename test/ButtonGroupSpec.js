@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import ButtonGroup from '../lib/ButtonGroup';
-import Button from '../lib/Button';
+import ButtonGroup from '../src/ButtonGroup';
+import Button from '../src/Button';
 
 describe('ButtonGroup', function () {
   it('Should output a button group', function () {

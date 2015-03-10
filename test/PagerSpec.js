@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Pager from '../lib/Pager';
-import PageItem from '../lib/PageItem';
+import Pager from '../src/Pager';
+import PageItem from '../src/PageItem';
 
 describe('Pager', function () {
   it('Should output a unordered list as root element with class "pager"', function () {

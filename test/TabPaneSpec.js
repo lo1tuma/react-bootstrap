@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import TabPane from '../lib/TabPane';
+import TabPane from '../src/TabPane';
 
 describe('TabPane', function () {
   it('Should have class', function () {

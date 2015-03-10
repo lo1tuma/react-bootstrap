@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import FadeMixin from '../lib/FadeMixin';
+import FadeMixin from '../src/FadeMixin';
 
 let Component;
 

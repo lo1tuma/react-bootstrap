@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Panel from '../lib/Panel';
-import Table from '../lib/Table';
+import Panel from '../src/Panel';
+import Table from '../src/Table';
 
 describe('Panel', function () {
   it('Should have class and body', function () {

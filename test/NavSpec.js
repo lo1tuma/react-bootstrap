@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Nav from '../lib/Nav';
-import NavItem from '../lib/NavItem';
-import Button from '../lib/Button';
+import Nav from '../src/Nav';
+import NavItem from '../src/NavItem';
+import Button from '../src/Button';
 
 describe('Nav', function () {
   it('Should set the correct item active', function () {

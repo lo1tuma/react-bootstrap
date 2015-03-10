@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Navbar from '../lib/Navbar';
-import Nav from '../lib/Nav';
+import Navbar from '../src/Navbar';
+import Nav from '../src/Nav';
 
 describe('Nav', function () {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Alert from '../lib/Alert';
+import Alert from '../src/Alert';
 
 describe('Alert', function () {
   it('Should output a alert with message', function () {

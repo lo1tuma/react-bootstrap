@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import Modal from '../lib/Modal';
+import Modal from '../src/Modal';
 
 describe('Modal', function () {
 

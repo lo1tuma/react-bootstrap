@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
-import BootstrapMixin from '../lib/BootstrapMixin';
+import BootstrapMixin from '../src/BootstrapMixin';
 
 let Component;
 
