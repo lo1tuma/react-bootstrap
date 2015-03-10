@@ -13,7 +13,7 @@
     "test": "karma start --single-run",
     "babel-build-amd": "babel --modules amd --optional es7.objectRestSpread src --out-dir tmp-amd",
     "babel-build-lib": "babel --optional es7.objectRestSpread src --out-dir tmp-lib",
-    "lint": "eslint src"
+    "lint": "eslint src test docs"
   },
   "main": "lib/main.js",
   "directories": {
