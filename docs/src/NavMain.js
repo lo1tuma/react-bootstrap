@@ -1,13 +1,11 @@
-'use strict';
+import React from 'react';
+import Router from 'react-router-component';
+import Navbar from '../../lib/Navbar';
+import Nav from '../../lib/Nav';
 
-var React = require('react');
-var Router = require('react-router-component');
-var Navbar = require('../../lib/Navbar');
-var Nav = require('../../lib/Nav');
+const InternalLink = Router.Link;
 
-var InternalLink = Router.Link;
-
-var NAV_LINKS = {
+const NAV_LINKS = {
   'getting-started': {
     link: '/getting-started.html',
     title: 'Getting started'
@@ -18,13 +16,13 @@ var NAV_LINKS = {
   }
 };
 
-var NavMain = React.createClass({
+const NavMain = React.createClass({
   propTypes: {
     activePage: React.PropTypes.string
   },
 
-  render: function () {
-    var brand = <InternalLink href="/" className="navbar-brand">React Bootstrap</InternalLink>;
+  render() {
+    let brand = <InternalLink href="/" className="navbar-brand">React Bootstrap</InternalLink>;
 
     return (
       <Navbar componentClass='header' brand={brand} staticTop className="bs-docs-nav" role="banner" toggleNavKey={0}>
@@ -35,8 +33,8 @@ var NavMain = React.createClass({
     );
   },
 
-  renderNavItem: function (linkName) {
-    var link = NAV_LINKS[linkName];
+  renderNavItem(linkName) {
+    let link = NAV_LINKS[linkName];
 
     return (
         <li className={this.props.activePage === linkName ? 'active' : null} key={linkName}>
@@ -46,4 +44,4 @@ var NavMain = React.createClass({
   }
 });
 
-module.exports = NavMain;
+export default NavMain;

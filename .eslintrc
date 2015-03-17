@@ -11,6 +11,7 @@
     "react"
   ],
   "rules": {
+    "comma-spacing": 1,
     "key-spacing": 0,
     "no-underscore-dangle": 0,
     "no-unused-vars": [2, { "vars": "all", "args": "none" }],

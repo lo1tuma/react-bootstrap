@@ -1,5 +1,4 @@
 *~
-node_modules
 .DS_Store
 npm-debug.log
 test_bundle.js
@@ -9,8 +8,11 @@ transpiled/*
 docs/*.html
 docs/assets/bundle.js
 cjs/*
+
+node_modules
 amd/*
 ie8/bundle.js
 lib/*
+docs-built/
 tmp-bower-repo/
 tmp-docs-repo/

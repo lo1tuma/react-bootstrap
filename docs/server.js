@@ -6,10 +6,10 @@ var development = process.env.NODE_ENV !== 'production';
 var app = express();
 
 if (development) {
+  require('babel/register');
   var path = require('path');
   var url = require('url');
   var browserify = require('connect-browserify');
-  var nodejsx = require('node-jsx').install();
   var Root = require('./src/Root');
 
   app = app

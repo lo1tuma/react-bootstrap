@@ -1,10 +1,8 @@
-'use strict';
+import React from 'react';
+import packageJSON from '../../package.json';
 
-var React = require('react');
-var packageJSON = require('../../package.json');
-
-var PageHeader = React.createClass({
-  render: function () {
+const PageHeader = React.createClass({
+  render() {
     return (
         <footer className="bs-docs-footer" role="contentinfo">
           <div className="container">
@@ -34,4 +32,4 @@ var PageHeader = React.createClass({
   }
 });
 
-module.exports = PageHeader;
+export default PageHeader;

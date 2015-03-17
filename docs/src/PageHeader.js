@@ -1,9 +1,7 @@
-'use strict';
+import React from 'react';
 
-var React = require('react');
-
-var PageHeader = React.createClass({
-  render: function () {
+const PageHeader = React.createClass({
+  render() {
     return (
       <div className="bs-docs-header" id="content">
         <div className="container">
@@ -11,8 +9,8 @@ var PageHeader = React.createClass({
           <p>{this.props.subTitle}</p>
         </div>
       </div>
-      );
+    );
   }
 });
 
-module.exports = PageHeader;
+export default PageHeader;

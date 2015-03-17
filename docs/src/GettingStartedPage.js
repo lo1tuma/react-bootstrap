@@ -1,15 +1,11 @@
-'use strict';
+import React from 'react';
 
-var React = require('react');
-var fs = require('fs');
+import NavMain from './NavMain';
+import PageHeader from './PageHeader';
+import PageFooter from './PageFooter';
 
-var NavMain = require('./NavMain');
-var PageHeader = require('./PageHeader');
-var PageFooter = require('./PageFooter');
-var ReactPlayground = require('./ReactPlayground');
-
-var Page = React.createClass({
-  render: function () {
+const Page = React.createClass({
+  render() {
     return (
         <div>
           <NavMain activePage="getting-started" />
@@ -100,9 +96,9 @@ var Page = React.createClass({
       );
   },
 
-  shouldComponentUpdate: function() {
+  shouldComponentUpdate() {
     return false;
   }
 });
 
-module.exports = Page;
+export default Page;

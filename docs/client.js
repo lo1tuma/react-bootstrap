@@ -1,9 +1,14 @@
-'use strict';
+import from 'bootstrap/less/bootstrap.less';
+import from 'bootstrap/docs/assets/css/_src/docs.css';
+import from './assets/style.css';
 
-var React = require('react');
-var Root = require('./src/Root');
+import from './assets/carousel.png';
+import from './assets/logo.png';
+
+import React from 'react';
+import Root from './src/Root';
 
 // For React devtools
 window.React = React;
 
-React.render(React.createFactory(Root)(window.INITIAL_PROPS), document);
+React.render(<Root {...window.INITIAL_PROPS} />, document);

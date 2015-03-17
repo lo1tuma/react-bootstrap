@@ -4,6 +4,7 @@ import strategies from './strategies';
 
 const defaultOptions = {
   development: false,
+  docs: false,
   test: false
 };
 

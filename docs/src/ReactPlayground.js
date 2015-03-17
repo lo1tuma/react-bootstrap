@@ -1,49 +1,52 @@
-var React = require('react');
-var classSet = require('react/lib/cx');
-var CodeMirror = global.CodeMirror;
-var JSXTransformer = global.JSXTransformer;
-var Accordion = require('../../lib/Accordion');
-var Alert = require('../../lib/Alert');
-var Badge = require('../../lib/Badge');
-var Button = require('../../lib/Button');
-var ButtonGroup = require('../../lib/ButtonGroup');
-var ButtonToolbar = require('../../lib/ButtonToolbar');
-var CollapsableMixin = require('../../lib/CollapsableMixin');
-var Carousel = require('../../lib/Carousel');
-var CarouselItem = require('../../lib/CarouselItem');
-var Col = require('../../lib/Col');
-var DropdownButton = require('../../lib/DropdownButton');
-var Glyphicon = require('../../lib/Glyphicon');
-var Grid = require('../../lib/Grid');
-var Input = require('../../lib/Input');
-var Jumbotron = require('../../lib/Jumbotron');
-var Label = require('../../lib/Label');
-var ListGroup = require('../../lib/ListGroup');
-var ListGroupItem = require('../../lib/ListGroupItem');
-var Nav = require('../../lib/Nav');
-var Navbar = require('../../lib/Navbar');
-var NavItem = require('../../lib/NavItem');
-var MenuItem = require('../../lib/MenuItem');
-var Modal = require('../../lib/Modal');
-var ModalTrigger = require('../../lib/ModalTrigger');
-var OverlayTrigger = require('../../lib/OverlayTrigger');
-var OverlayMixin = require('../../lib/OverlayMixin');
-var PageHeader = require('../../lib/PageHeader');
-var PageItem = require('../../lib/PageItem');
-var Pager = require('../../lib/Pager');
-var Panel = require('../../lib/Panel');
-var PanelGroup = require('../../lib/PanelGroup');
-var Popover = require('../../lib/Popover');
-var ProgressBar = require('../../lib/ProgressBar');
-var Row = require('../../lib/Row');
-var SplitButton = require('../../lib/SplitButton');
-var TabbedArea = require('../../lib/TabbedArea');
-var Table = require('../../lib/Table');
-var TabPane = require('../../lib/TabPane');
-var Tooltip = require('../../lib/Tooltip');
-var Well = require('../../lib/Well');
+/* eslint-disable */
+import React from 'react';
+import classSet from 'react/lib/cx';
+import Accordion from '../../lib/Accordion';
+import Alert from '../../lib/Alert';
+import Badge from '../../lib/Badge';
+import Button from '../../lib/Button';
+import ButtonGroup from '../../lib/ButtonGroup';
+import ButtonToolbar from '../../lib/ButtonToolbar';
+import CollapsableMixin from '../../lib/CollapsableMixin';
+import Carousel from '../../lib/Carousel';
+import CarouselItem from '../../lib/CarouselItem';
+import Col from '../../lib/Col';
+import DropdownButton from '../../lib/DropdownButton';
+import Glyphicon from '../../lib/Glyphicon';
+import Grid from '../../lib/Grid';
+import Input from '../../lib/Input';
+import Jumbotron from '../../lib/Jumbotron';
+import Label from '../../lib/Label';
+import ListGroup from '../../lib/ListGroup';
+import ListGroupItem from '../../lib/ListGroupItem';
+import Nav from '../../lib/Nav';
+import Navbar from '../../lib/Navbar';
+import NavItem from '../../lib/NavItem';
+import MenuItem from '../../lib/MenuItem';
+import Modal from '../../lib/Modal';
+import ModalTrigger from '../../lib/ModalTrigger';
+import OverlayTrigger from '../../lib/OverlayTrigger';
+import OverlayMixin from '../../lib/OverlayMixin';
+import PageHeader from '../../lib/PageHeader';
+import PageItem from '../../lib/PageItem';
+import Pager from '../../lib/Pager';
+import Panel from '../../lib/Panel';
+import PanelGroup from '../../lib/PanelGroup';
+import Popover from '../../lib/Popover';
+import ProgressBar from '../../lib/ProgressBar';
+import Row from '../../lib/Row';
+import SplitButton from '../../lib/SplitButton';
+import TabbedArea from '../../lib/TabbedArea';
+import Table from '../../lib/Table';
+import TabPane from '../../lib/TabPane';
+import Tooltip from '../../lib/Tooltip';
+import Well from '../../lib/Well';
+/* eslint-enable */
 
-var IS_MOBILE = typeof navigator !== 'undefined' && (
+const CodeMirror = global.CodeMirror;
+const JSXTransformer = global.JSXTransformer;
+
+const IS_MOBILE = typeof navigator !== 'undefined' && (
   navigator.userAgent.match(/Android/i)
     || navigator.userAgent.match(/webOS/i)
     || navigator.userAgent.match(/iPhone/i)
@@ -53,9 +56,11 @@ var IS_MOBILE = typeof navigator !== 'undefined' && (
     || navigator.userAgent.match(/Windows Phone/i)
   );
 
-var CodeMirrorEditor = React.createClass({
+const CodeMirrorEditor = React.createClass({
   componentDidMount: function() {
-    if (IS_MOBILE) return;
+    if (IS_MOBILE) {
+      return;
+    }
 
     this.editor = CodeMirror.fromTextArea(this.refs.editor.getDOMNode(), {
       mode: 'javascript',
@@ -76,17 +81,17 @@ var CodeMirrorEditor = React.createClass({
   },
 
   handleChange: function() {
-    if (!this.props.readOnly) {
-      this.props.onChange && this.props.onChange(this.editor.getValue());
+    if (!this.props.readOnly && this.props.onChange) {
+      this.props.onChange(this.editor.getValue());
     }
   },
 
   render: function() {
     // wrap in a div to fully contain CodeMirror
-    var editor;
+    let editor;
 
     if (IS_MOBILE) {
-      var preStyles = {overflow: 'scroll'};
+      let preStyles = {overflow: 'scroll'};
       editor = <pre style={preStyles}>{this.props.codeText}</pre>;
     } else {
       editor = <textarea ref="editor" defaultValue={this.props.codeText} />;
@@ -100,7 +105,7 @@ var CodeMirrorEditor = React.createClass({
   }
 });
 
-var selfCleaningTimeout = {
+const selfCleaningTimeout = {
   componentDidUpdate: function() {
     clearTimeout(this.timeoutID);
   },
@@ -111,7 +116,7 @@ var selfCleaningTimeout = {
   }
 };
 
-var ReactPlayground = React.createClass({
+const ReactPlayground = React.createClass({
   mixins: [selfCleaningTimeout],
 
   MODES: {JSX: 'JSX', JS: 'JS', NONE: null},
@@ -147,7 +152,7 @@ var ReactPlayground = React.createClass({
   },
 
   handleCodeModeToggle: function(e) {
-    var mode;
+    let mode;
 
     e.preventDefault();
 
@@ -168,13 +173,13 @@ var ReactPlayground = React.createClass({
   },
 
   render: function() {
-    var classes = {
+    let classes = {
       'bs-example': true
     };
-    var toggleClasses = {
+    let toggleClasses = {
       'code-toggle': true
     };
-    var editor;
+    let editor;
 
     if (this.props.exampleClassName){
       classes[this.props.exampleClassName] = true;
@@ -214,28 +219,30 @@ var ReactPlayground = React.createClass({
   },
 
   componentWillUnmount: function() {
-    var mountNode = this.refs.mount.getDOMNode();
+    let mountNode = this.refs.mount.getDOMNode();
     try {
       React.unmountComponentAtNode(mountNode);
     } catch (e) { }
   },
 
   executeCode: function() {
-    var mountNode = this.refs.mount.getDOMNode();
+    let mountNode = this.refs.mount.getDOMNode();
 
     try {
       React.unmountComponentAtNode(mountNode);
     } catch (e) { }
 
     try {
-      var compiledCode = this.compileCode();
+      let compiledCode = this.compileCode();
       if (this.props.renderCode) {
         React.render(
           <CodeMirrorEditor codeText={compiledCode} readOnly={true} />,
           mountNode
         );
       } else {
+        /* eslint-disable */
         eval(compiledCode);
+        /* eslint-enable */
       }
     } catch (err) {
       this.setTimeout(function() {
@@ -248,4 +255,4 @@ var ReactPlayground = React.createClass({
   }
 });
 
-module.exports = ReactPlayground;
+export default ReactPlayground;
