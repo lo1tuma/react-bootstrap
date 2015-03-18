@@ -1,4 +1,6 @@
+/* eslint no-var: 0 */
 require('babel/register');
+
 var webpackConfig = require('./webpack/test.config.js');
 var isCI = process.env.CONTINUOUS_INTEGRATION === 'true';
 
@@ -23,11 +25,15 @@ module.exports = function (config) {
 
     webpack: webpackConfig,
 
-    webpackMIddleware: {
-
+    webpackMiddleware: {
+      noInfo: isCI
     },
 
-    reporters: ['progress'],
+    reporters: ['mocha'],
+
+    mochaReporter: {
+      output: 'autowatch'
+    },
 
     port: 9876,
 
