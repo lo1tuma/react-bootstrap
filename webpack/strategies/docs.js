@@ -4,6 +4,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 export default (config, options) => {
   if (options.docs) {
     let jsLoader = '';
+    let cssSourceMap = options.development ? '?sourceMap' : '';
 
     config = _.extend({}, config, {
       entry: {
@@ -25,6 +26,7 @@ export default (config, options) => {
               jsLoader = value.loader;
 
               return _.extend({}, value, {
+                loader: jsLoader + '!client',
                 exclude: /node_modules|Samples\.js/
               });
             }
@@ -33,8 +35,8 @@ export default (config, options) => {
           })
           .concat([
             { test: /Samples.js/, loader: 'transform?brfs!' + jsLoader },
-            { test: /\.css/, loader: ExtractTextPlugin.extract('style', 'css') },
-            { test: /\.less$/, loader: ExtractTextPlugin.extract('style', 'css!less') },
+            { test: /\.css/, loader: ExtractTextPlugin.extract('style', `css${cssSourceMap}`) },
+            { test: /\.less$/, loader: ExtractTextPlugin.extract('style', `css${cssSourceMap}!less${cssSourceMap}`) },
             { test: /\.json$/, loader: 'json' },
 
             { test: /\.jpe?g$|\.gif$|\.png$/, loader: 'file?name=[name].[ext]' },

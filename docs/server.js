@@ -4,6 +4,7 @@ var express = require('express');
 
 var development = process.env.NODE_ENV !== 'production';
 var app = express();
+var path = require('path');
 
 if (development) {
   require('babel/register');
@@ -24,7 +25,7 @@ if (development) {
     });
 } else {
   app = app
-    .use(express.static(__dirname));
+    .use(express.static(path.join(__dirname, '../docs-built')));
 }
 
 app

@@ -43,8 +43,9 @@ import Tooltip from '../../lib/Tooltip';
 import Well from '../../lib/Well';
 /* eslint-enable */
 
-const CodeMirror = global.CodeMirror;
-const JSXTransformer = global.JSXTransformer;
+//import JSXTransformer from '../vendor/JSXTransformer';
+import {CodeMirror, IS_NODE} from './CodeMirror';
+import babel from 'babel/browser';
 
 const IS_MOBILE = typeof navigator !== 'undefined' && (
   navigator.userAgent.match(/Android/i)
@@ -58,17 +59,17 @@ const IS_MOBILE = typeof navigator !== 'undefined' && (
 
 const CodeMirrorEditor = React.createClass({
   componentDidMount: function() {
-    if (IS_MOBILE) {
+    if (IS_MOBILE || IS_NODE) {
       return;
     }
 
     this.editor = CodeMirror.fromTextArea(this.refs.editor.getDOMNode(), {
       mode: 'javascript',
       lineNumbers: false,
-      lineWrapping: true,
+      lineWrapping: false,
       matchBrackets: true,
       tabSize: 2,
-      theme: 'solarized-light',
+      theme: 'solarized light',
       readOnly: this.props.readOnly
     });
     this.editor.on('change', this.handleChange);
@@ -130,7 +131,8 @@ const ReactPlayground = React.createClass({
   getDefaultProps: function() {
     return {
       transformer: function(code) {
-        return JSXTransformer.transform(code).code;
+        //return JSXTransformer.transform(code).code;
+        return babel.transform(code).code;
       }
     };
   },
