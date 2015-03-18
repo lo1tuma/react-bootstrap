@@ -10,13 +10,27 @@ if (development) {
   require('babel/register');
   var path = require('path');
   var url = require('url');
-  var browserify = require('connect-browserify');
+  var webpack = require('webpack');
+  var webpackMiddleware = require('webpack-dev-middleware');
+  var webpackConfig = require('../webpack/webpack.config')({
+    development: development,
+    docs: true
+  });
+  var publicPath = webpackConfig.output.publicPath;
+
+  webpackConfig.output.path = '/';
+  webpackConfig.output.publicPath = undefined;
+
   var Root = require('./src/Root');
 
   app = app
-    .get('/assets/bundle.js', browserify('./client', {debug: true, watch: false}))
-    .use('/assets', express.static(path.join(__dirname, 'assets')))
-    .use('/vendor', express.static(path.join(__dirname, 'vendor')))
+    .use(webpackMiddleware(webpack(webpackConfig), {
+      noInfo: false,
+      publicPath: publicPath,
+      stats: {
+          colors: true
+      }
+    }))
     .use(function renderApp(req, res) {
       var fileName = url.parse(req.url).pathname;
       var RootHTML = Root.renderToString({initialPath: fileName});

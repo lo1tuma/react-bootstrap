@@ -45,6 +45,7 @@
     "envify": "~1.2.1",
     "eslint": "^0.15.1",
     "eslint-plugin-react": "^1.4.1",
+    "express": "^3.4.8",
     "extract-text-webpack-plugin": "^0.3.8",
     "file-loader": "^0.8.1",
     "grunt": "~0.4.2",
@@ -90,6 +91,7 @@
     "sinon": "^1.10.3",
     "style-loader": "^0.8.3",
     "transform-loader": "^0.2.1",
-    "webpack": "^1.7.2"
+    "webpack": "^1.7.2",
+    "webpack-dev-middleware": "^1.0.11"
   }
 }

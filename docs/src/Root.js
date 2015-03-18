@@ -113,7 +113,6 @@ const Root = React.createClass({
             </Locations>
 
             <script dangerouslySetInnerHTML={browserInitScriptObj} />
-            <script src="vendor/JSXTransformer.js" />
             <script src="assets/bundle.js" />
           </body>
         </html>
