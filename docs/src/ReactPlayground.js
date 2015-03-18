@@ -43,7 +43,6 @@ import Tooltip from '../../lib/Tooltip';
 import Well from '../../lib/Well';
 /* eslint-enable */
 
-//import JSXTransformer from '../vendor/JSXTransformer';
 import {CodeMirror, IS_NODE} from './CodeMirror';
 import babel from 'babel/browser';
 
@@ -131,7 +130,6 @@ const ReactPlayground = React.createClass({
   getDefaultProps: function() {
     return {
       transformer: function(code) {
-        //return JSXTransformer.transform(code).code;
         return babel.transform(code).code;
       }
     };

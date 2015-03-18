@@ -1,4 +1,4 @@
-var renderedInstance;
+const renderedInstance;
 
 function handleSelect (selectedKey) {
   renderedInstance.setProps({
@@ -6,10 +6,10 @@ function handleSelect (selectedKey) {
   });
 }
 
-var panelGroupInstance = (
+const panelGroupInstance = (
   <PanelGroup activeKey='1' onSelect={handleSelect} accordion>
-    <Panel header="Panel 1" eventKey='1'>Panel 1 content</Panel>
-    <Panel header="Panel 2" eventKey='2'>Panel 2 content</Panel>
+    <Panel header='Panel 1' eventKey='1'>Panel 1 content</Panel>
+    <Panel header='Panel 2' eventKey='2'>Panel 2 content</Panel>
   </PanelGroup>
 );
 
