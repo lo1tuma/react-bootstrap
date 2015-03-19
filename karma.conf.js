@@ -46,6 +46,7 @@ module.exports = function (config) {
     browsers: [ isCI ? 'PhantomJS' : 'Chrome' ],
 
     captureTimeout: 60000,
+    browserNoActivityTimeout: 30000,
 
     singleRun: isCI
   });
