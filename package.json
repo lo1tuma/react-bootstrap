@@ -13,7 +13,7 @@
     "test": "karma start --single-run",
     "babel-build-amd": "babel --modules amd --optional es7.objectRestSpread src --out-dir tmp-amd",
     "babel-build-lib": "babel --optional es7.objectRestSpread src --out-dir tmp-lib",
-    "lint": "eslint src test docs",
+    "lint": "eslint src test docs ie8 webpack karma.conf.js webpack.config.js webpack.docs.js",
     "build-docs": "webpack --config webpack.docs.js && node docs/build.js"
   },
   "main": "lib/main.js",

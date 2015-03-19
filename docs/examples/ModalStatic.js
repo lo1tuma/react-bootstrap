@@ -1,5 +1,5 @@
 function handleHide() {
-  alert('Close me!')
+  alert('Close me!');
 }
 
 const modalInstance = (

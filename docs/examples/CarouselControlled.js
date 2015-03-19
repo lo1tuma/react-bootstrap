@@ -3,7 +3,7 @@ const ControlledCarousel = React.createClass({
     return {
       index: 0,
       direction: null
-    }
+    };
   },
 
   handleSelect(selectedIndex, selectedDirection) {
