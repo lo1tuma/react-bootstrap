@@ -10,7 +10,7 @@
   "scripts": {
     "build": "./node_modules/.bin/grunt build",
     "test-watch": "karma start",
-    "test": "karma start --single-run",
+    "test": "karma start --single-run && npm run lint",
     "babel-build-amd": "babel --modules amd --optional es7.objectRestSpread src --out-dir tmp-amd",
     "babel-build-lib": "babel --optional es7.objectRestSpread src --out-dir tmp-lib",
     "lint": "eslint src test docs ie8 webpack karma.conf.js webpack.config.js webpack.docs.js",
