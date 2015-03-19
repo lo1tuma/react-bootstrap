@@ -40,8 +40,7 @@ export default (config, options) => {
             { test: /\.json$/, loader: 'json' },
 
             { test: /\.jpe?g$|\.gif$|\.png$/, loader: 'file?name=[name].[ext]' },
-            { test: /\.eot$|\.ttf$|\.svg$/, loader: 'file?name=[name].[ext]' },
-            { test: /\.woff$/, loader: 'file?name=[name].[ext]' }
+            { test: /\.eot$|\.ttf$|\.svg$|\.woff2?$/, loader: 'file?name=[name].[ext]' }
           ])
       },
       plugins: config.plugins.concat([
