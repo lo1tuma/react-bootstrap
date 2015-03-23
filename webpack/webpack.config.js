@@ -1,11 +1,18 @@
 import _ from 'lodash';
 import webpack from 'webpack';
 import strategies from './strategies';
+import yargs from 'yargs';
+
+const argv = yargs
+  .alias('p', 'optimize-minimize')
+  .alias('d', 'debug')
+  .argv;
 
 const defaultOptions = {
-  development: false,
+  development: argv.debug,
   docs: false,
-  test: false
+  test: false,
+  optimize: argv.optimizeMinimize
 };
 
 export default (options) => {
@@ -18,7 +25,7 @@ export default (options) => {
     },
 
     output: {
-      path: './lib',
+      path: './dist',
       filename: '[name].js',
       library: 'ReactBootstrap',
       libraryTarget: 'umd'

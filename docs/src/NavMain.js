@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'react-router-component';
-import Navbar from '../../lib/Navbar';
-import Nav from '../../lib/Nav';
+import Navbar from '../../src/Navbar';
+import Nav from '../../src/Nav';
 
 const InternalLink = Router.Link;
 

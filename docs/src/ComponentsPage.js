@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-import Affix from '../../lib/Affix';
-import Nav from '../../lib/Nav';
-import SubNav from '../../lib/SubNav';
-import NavItem from '../../lib/NavItem';
+import Affix from '../../src/Affix';
+import Nav from '../../src/Nav';
+import SubNav from '../../src/SubNav';
+import NavItem from '../../src/NavItem';
 
 import NavMain from './NavMain';
 import PageHeader from './PageHeader';

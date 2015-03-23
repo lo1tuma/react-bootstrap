@@ -1,15 +1,33 @@
-/* eslint no-var: 0 */
-'use strict';
+import path from 'path';
+import Root from './src/Root';
+import fsp from 'fs-promise';
+import { exec, spawn } from 'child-process-promise';
 
-require('babel/register');
+const repoRoot = path.resolve(__dirname, '../');
+const docsBuilt = path.join(repoRoot, 'docs-built');
 
-var fs = require('fs');
-var path = require('path');
-var Root = require('./src/Root');
+const license = path.join(repoRoot, 'LICENSE');
+const readmeSrc = path.join(__dirname, 'README.docs.md');
+const readmeDest = path.join(docsBuilt, 'README.md');
 
-Root.getPages()
-  .forEach(function (fileName) {
-    var RootHTML = Root.renderToString({initialPath: fileName});
+export default function BuildDocs() {
+  console.log('Building: '.cyan + 'docs'.green);
 
-    fs.writeFileSync(path.join(__dirname, '../docs-built', fileName), RootHTML);
-  });
+  return exec(`rm -rf ${docsBuilt}`)
+    .then(() => fsp.mkdir(docsBuilt))
+    .then(() => {
+      let writes = Root
+        .getPages()
+        .map(fileName => {
+          let RootHTML = Root.renderToString({initialPath: fileName});
+          return fsp.writeFile(path.join(docsBuilt, fileName), RootHTML);
+        });
+
+      return Promise.all(writes.concat([
+        exec(`webpack --config webpack.docs.js -p --bail`),
+        exec(`cp ${license} ${docsBuilt}`),
+        exec(`cp ${readmeSrc} ${readmeDest}`)
+      ]));
+    })
+    .then(() => console.log('Built: '.cyan + 'docs'.green));
+}

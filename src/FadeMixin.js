@@ -1,4 +1,3 @@
-/*global document */
 // TODO: listen for onTransitionEnd to remove el
 function getElementsAndSelf (root, classes){
   let els = root.querySelectorAll('.' + classes.join('.'));

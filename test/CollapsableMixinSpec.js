@@ -1,13 +1,11 @@
-/*global describe, it, assert */
-
-var React            = require('react');
-var ReactTestUtils   = require('react/lib/ReactTestUtils');
-var CollapsableMixin = require('../lib/CollapsableMixin');
-var classSet         = require('../lib/utils/classSet');
+import React from 'react';
+import ReactTestUtils from 'react/lib/ReactTestUtils';
+import CollapsableMixin from '../src/CollapsableMixin';
+import classSet from '../src/utils/classSet';
 
 describe('CollapsableMixin', function () {
 
-  var Component, instance;
+  let Component, instance;
 
   beforeEach(function(){
     Component = React.createClass({
@@ -22,7 +20,7 @@ describe('CollapsableMixin', function () {
       },
 
       render: function(){
-        var styles = this.getCollapsableClassSet();
+        let styles = this.getCollapsableClassSet();
         return (
           <div>
             <div ref="panel" className={classSet(styles)}>
@@ -39,7 +37,7 @@ describe('CollapsableMixin', function () {
       instance = ReactTestUtils.renderIntoDocument(
         <Component defaultExpanded>Panel content</Component>
       );
-      var state = instance.getInitialState();
+      let state = instance.getInitialState();
       assert.ok(state.expanded === true);
     });
 
@@ -47,7 +45,7 @@ describe('CollapsableMixin', function () {
       instance = ReactTestUtils.renderIntoDocument(
         <Component>Panel content</Component>
       );
-      var state = instance.getInitialState();
+      let state = instance.getInitialState();
       assert.ok(state.collapsing === false);
     });
   });
@@ -70,27 +68,27 @@ describe('CollapsableMixin', function () {
 
     it('Should have collapsing class', function () {
       instance.setProps({expanded:true});
-      var node = instance.getCollapsableDOMNode();
+      let node = instance.getCollapsableDOMNode();
       assert.equal(node.className, 'collapsing');
     });
 
     it('Should set initial 0px height', function () {
-      var node = instance.getCollapsableDOMNode();
-      assert.equal(node.style['height'], '');
+      let node = instance.getCollapsableDOMNode();
+      assert.equal(node.style.height, '');
 
       instance._afterWillUpdate = function(){
-        assert.equal(node.style['height'], '0px');
+        assert.equal(node.style.height, '0px');
       };
 
       instance.setProps({expanded:true});
     });
 
     it('Should set transition to height', function () {
-      var node = instance.getCollapsableDOMNode();
-      assert.equal(node.style['height'], '');
+      let node = instance.getCollapsableDOMNode();
+      assert.equal(node.styled, undefined);
 
       instance.setProps({expanded:true});
-      assert.equal(node.style['height'], '15px');
+      assert.equal(node.style.height, '15px');
     });
 
     it('Should transition from collapsing to not collapsing', function (done) {
@@ -106,19 +104,19 @@ describe('CollapsableMixin', function () {
     });
 
     it('Should clear height after transition complete', function (done) {
-      var node = instance.getCollapsableDOMNode();
+      let node = instance.getCollapsableDOMNode();
 
-      instance._addEndEventListener = function(node, complete){
+      instance._addEndEventListener = function(nodeInner, complete){
         setTimeout(function(){
           complete();
-          assert.equal(node.style['height'], '');
+          assert.equal(nodeInner.style.height, '');
           done();
         }, 100);
       };
 
-      assert.equal(node.style['height'], '');
+      assert.equal(node.style.height, '');
       instance.setProps({expanded:true});
-      assert.equal(node.style['height'], '15px');
+      assert.equal(node.style.height, '15px');
     });
   });
 
@@ -131,27 +129,27 @@ describe('CollapsableMixin', function () {
 
     it('Should have collapsing class', function () {
       instance.setProps({expanded:false});
-      var node = instance.getCollapsableDOMNode();
+      let node = instance.getCollapsableDOMNode();
       assert.equal(node.className, 'collapsing');
     });
 
     it('Should set initial height', function () {
-      var node = instance.getCollapsableDOMNode();
+      let node = instance.getCollapsableDOMNode();
 
       instance._afterWillUpdate = function(){
-        assert.equal(node.style['height'], '15px');
+        assert.equal(node.style.height, '15px');
       };
 
-      assert.equal(node.style['height'], '');
+      assert.equal(node.style.height, '');
       instance.setProps({expanded:false});
     });
 
     it('Should set transition to height', function () {
-      var node = instance.getCollapsableDOMNode();
-      assert.equal(node.style['height'], '');
+      let node = instance.getCollapsableDOMNode();
+      assert.equal(node.style.height, '');
 
       instance.setProps({expanded:false});
-      assert.equal(node.style['height'], '0px');
+      assert.equal(node.style.height, '0px');
     });
 
     it('Should transition from collapsing to not collapsing', function (done) {
@@ -167,19 +165,19 @@ describe('CollapsableMixin', function () {
     });
 
     it('Should have 0px height after transition complete', function (done) {
-      var node = instance.getCollapsableDOMNode();
+      let node = instance.getCollapsableDOMNode();
 
-      instance._addEndEventListener = function(node, complete){
+      instance._addEndEventListener = function(nodeInner, complete){
         setTimeout(function(){
           complete();
-          assert.ok(node.style['height'] === '0px');
+          assert.ok(nodeInner.style.height === '0px');
           done();
         }, 100);
       };
 
-      assert.equal(node.style['height'], '');
+      assert.equal(node.style.height, '');
       instance.setProps({expanded:false});
-      assert.equal(node.style['height'], '0px');
+      assert.equal(node.style.height, '0px');
     });
   });
 

@@ -1,3 +1,2 @@
 import config from './webpack.config';
-
-export default config({development: true, docs: true});
+export default config({docs: true});
